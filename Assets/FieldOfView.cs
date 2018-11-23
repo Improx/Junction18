@@ -5,6 +5,7 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour {
 
 	public float Angle = 75;
+	public float MaxDistance = 5;
 	public float Resolution = 100;
 
 	// Use this for initialization
