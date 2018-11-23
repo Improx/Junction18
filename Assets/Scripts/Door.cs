@@ -3,30 +3,16 @@
 public class Door : MonoBehaviour {
 	
 	Collider d_Collider;
-
-	public bool _isOpen = false;
+	MeshRenderer d_Mesh;
 	private void Start() {
 		d_Collider = GetComponent<Collider>();
+		d_Mesh = GetComponent<MeshRenderer>();
 	}
 
-    public bool IsOpen
-    {
-        get
-        {
-            return _isOpen;
-        }
-
-        set
-        {
-            _isOpen = value;
-			Debug.Log(IsOpen);
-        }
-    }
-
 	public void Toggle() {
-		IsOpen = !IsOpen;
-		d_Collider.enabled = !d_Collider.enabled;		
-
+		d_Collider.enabled = !d_Collider.enabled;
+		d_Mesh.enabled = !d_Mesh.enabled;	
+		//TODO: Add sound effect (& animation?)
 	}
 
 }
