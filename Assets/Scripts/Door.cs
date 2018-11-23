@@ -2,7 +2,12 @@
 
 public class Door : MonoBehaviour {
 	
+	Collider d_Collider;
+
 	public bool _isOpen = false;
+	private void Start() {
+		d_Collider = GetComponent<Collider>();
+	}
 
     public bool IsOpen
     {
@@ -20,6 +25,8 @@ public class Door : MonoBehaviour {
 
 	public void Toggle() {
 		IsOpen = !IsOpen;
+		d_Collider.enabled = !d_Collider.enabled;		
+
 	}
 
 }
