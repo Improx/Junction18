@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Door : MonoBehaviour {
 	
-	private bool _isOpen = false;
+	public bool _isOpen = false;
 
     public bool IsOpen
     {
@@ -20,7 +18,7 @@ public class Door : MonoBehaviour {
         }
     }
 
-	void toggle() {
+	public void Toggle() {
 		IsOpen = !IsOpen;
 	}
 

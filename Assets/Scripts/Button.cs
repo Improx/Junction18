@@ -1,25 +1,11 @@
 ﻿using UnityEngine;
 
-public class Button : MonoBehaviour
-{
-    private bool _isTriggered = false;
+public class Button : MonoBehaviour {
 
-    public bool IsTriggered
-    {
-        get
-        {
-            return _isTriggered;
-        }
+    [SerializeField]
+    public GameObject Target;
+    public void OnTriggerEnter(Collider other) => Target.GetComponent<Door>().Toggle();
 
-        set
-        {
-            _isTriggered = value;
-            Debug.Log(IsTriggered);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other) => IsTriggered = true;
-
-    private void OnTriggerExit(Collider other) => IsTriggered = false;
+    public void OnTriggerExit(Collider other) => Target.GetComponent<Door>().Toggle();
 
 }
