@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RobberPoints: 0
+  CountText: {fileID: 0}
 --- !u!114 &114835142529479718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,5 +84,5 @@ MonoBehaviour:
     i13: 153
     i14: 28
     i15: 6
-  m_ServerOnly: 0
+  m_ServerOnly: 1
   m_LocalPlayerAuthority: 0
