@@ -69,5 +69,8 @@ public class PlayerMove : NetworkBehaviour
         transform.position = spawnPoint.transform.position;
         transform.rotation = spawnPoint.transform.rotation;
         Destroy(spawnPoint.gameObject);
+
+        
+        if (!isLocalPlayer) return;
     }
 }
