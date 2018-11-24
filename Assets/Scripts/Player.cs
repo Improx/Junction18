@@ -56,6 +56,7 @@ public class Player : NetworkBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (!isLocalPlayer) return;
         var otherPlayer = other.rigidbody.GetComponent<Player>();
 
         if (!otherPlayer) return;
