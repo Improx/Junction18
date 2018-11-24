@@ -29,4 +29,23 @@ public class Player : NetworkBehaviour {
 
 		}
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        var otherPlayer = other.rigidbody.GetComponent<Player>();
+
+        if (!otherPlayer) return;
+
+        if (otherPlayer
+            && otherPlayer.Team == PlayerType.Robber
+            && Team == PlayerType.Guard) {
+            GameManager.Instance.CmdCapture(this.gameObject, otherPlayer.gameObject);
+        }
+    }
+    
+    [ClientRpc]
+    public void RpcGetCaptured()
+    {
+        var mover = GetComponent<PlayerMove>();
+        mover.enabled = false;
+    }
 }
