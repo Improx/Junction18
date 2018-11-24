@@ -13,10 +13,20 @@ public class Player : NetworkBehaviour {
         if (Team == PlayerType.Robber) {
             var mainCamera = FindObjectOfType<Camera>();
 
-            var vmCam = Instantiate(RobberCameraPrefab, new Vector3(0, 0, -100), new Quaternion());
-            vmCam.Follow = transform;
+            var vmCam = Instantiate(RobberCameraPrefab, new Vector3(0, 0, -200), new Quaternion());
+			var nightVision = vmCam.gameObject.AddComponent<DeferredNightVisionEffect>();
+			nightVision.m_LightSensitivityMultiplier = 0;
+
+			vmCam.Follow = transform;
             vmCam.m_Lens.OrthographicSize = 3;
             mainCamera.GetComponent<CinemachineBrain>().enabled = true;
+
         }
+
+		else
+		{
+			//We are Guard
+
+		}
     }
 }
