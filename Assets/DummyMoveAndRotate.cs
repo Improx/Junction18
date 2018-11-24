@@ -16,7 +16,7 @@ public class DummyMoveAndRotate : MonoBehaviour {
 	void Update () {
 		Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 		transform.position += MoveSpeed * moveVec * Time.deltaTime;
-		float rotationAmount = Input.GetAxis("Mouse X");
+		float rotationAmount = -Input.GetAxis("Mouse X");
 		transform.RotateAroundLocal(Vector3.forward, rotationAmount * RotationSpeed * Time.deltaTime);
 	}
 
