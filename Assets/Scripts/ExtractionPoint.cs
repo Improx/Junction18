@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExtractionPoint : MonoBehaviour {
 
+	public GameManager GManager;
 	public int points;
 	public SpriteRenderer TreasureSprite;
 
@@ -15,10 +16,10 @@ public class ExtractionPoint : MonoBehaviour {
 			TreasureSprite = other.GetComponentInParent<SpriteRenderer>();
 			TreasureSprite.enabled = !TreasureSprite.enabled;
 			other.enabled = !other.enabled;
-			points += 1;
+			GManager.RobberPoints += 1;
         }
     }
 
-    private void Update() => Debug.Log(points);
+    private void Update() => Debug.Log(GManager.RobberPoints);
 
 }

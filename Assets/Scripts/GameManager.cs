@@ -5,6 +5,7 @@ public class GameManager : NetworkBehaviour {
 	
 	public static GameManager Instance { get; private set; }
 
+	public int RobberPoints = 0;
 	
 
 	private void Awake() {
