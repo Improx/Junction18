@@ -9,6 +9,7 @@ public class FieldOfView : MonoBehaviour {
 	public float Resolution = 100;
 	public MeshFilter ViewMeshFilter;
 	public LayerMask RayCastMask;
+	public float MaskCutawayDistance = 0.18f;
 	[HideInInspector] public List<DummyRobber> VisibleRobbers = new List<DummyRobber>();
 
 	private Mesh _viewMesh;
@@ -41,10 +42,10 @@ public class FieldOfView : MonoBehaviour {
 			float rayAngle = lowAngle + angleIncrement * i;
 			Vector3 rayDir = AngleToDirection(rayAngle);
 			RaycastHit hit;
-			bool didHit = Physics.Raycast(transform.position, rayDir, out hit, maxDistance: MaxDistance);
+			bool didHit = Physics.Raycast(transform.position, rayDir, out hit, maxDistance: MaxDistance, layerMask: RayCastMask);
 			if (didHit)
 			{
-				hitPoints.Add(transform.InverseTransformPoint(hit.point));
+				hitPoints.Add(transform.InverseTransformPoint(hit.point + MaskCutawayDistance * rayDir));
 			}
 			else
 			{
