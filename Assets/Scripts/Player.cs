@@ -75,6 +75,12 @@ public class Player : NetworkBehaviour
         mover.enabled = false;
     }
 
+    [ClientRpc]
+    public void RpcDisplayEndSCreen()
+    {
+        GameEndScreen.Instance.Display();
+    }
+
     private void Update()
     {
         if (isLocalPlayer && Team == PlayerType.Robber)

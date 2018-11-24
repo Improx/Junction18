@@ -13,6 +13,12 @@ public class GameManager : NetworkBehaviour {
 		Instance = this;
 	}
 
+	public int NumOfRobbers => Robber.All.Count;
+	public int NumOfDetainedRobbers => 0;
+
+	public int NumOfItems => 0;
+	public int NumOfStolenItems => 0;
+
 	[Command]
 	public void CmdCapture(GameObject guard, GameObject robber) {
 		if (guard.GetComponent<Player>().Team != PlayerType.Guard
