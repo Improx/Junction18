@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e88708c00ad034fa19969a33748bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Screen: {fileID: 0}
-  DetainText: {fileID: 0}
+  Screen: {fileID: 114203201568669448}
+  DetainText: {fileID: 114228076487616130}
 --- !u!114 &114203201568669448
 MonoBehaviour:
   m_ObjectHideFlags: 1
