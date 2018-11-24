@@ -17,7 +17,7 @@ public class FlashScreenOverlay : MonoBehaviour {
 	public static void SetAmount(float amount)
 	{
 		Color color = _instance._image.color;
-		color.a = amount;
+		color.a = 0.1f * amount;
 		_instance._image.color = color;
 	}
 }
