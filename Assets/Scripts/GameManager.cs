@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : NetworkBehaviour {
 	
@@ -12,9 +13,6 @@ public class GameManager : NetworkBehaviour {
 	
 	private void Update() {
 		if (!isLocalPlayer) return;
-
-		CountText.text = "Items stolen: " + RobberPoints.ToString();
-
 		
 		if (NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers) {
 		    foreach (var player in Players)

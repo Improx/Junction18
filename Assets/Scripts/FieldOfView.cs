@@ -109,7 +109,9 @@ public class FieldOfView : MonoBehaviour {
 				if (Detected != null) Detected(robber, "Add");
 				VisibleRobbers.Add(robber);
 				robber.GetComponentInChildren<SpriteRenderer>().enabled = true;
-				robber.FlashlightRadiance = Mathf.Pow(guardToRobber.magnitude, -0.5f) + Mathf.InverseLerp(minCos, 1, viewToRobberCos);
+				float distanceFlashContrib = 1 - Mathf.InverseLerp(1, MaxDistance, guardToRobber.magnitude);
+				float angleFlashContrib = Mathf.InverseLerp(minCos, 1, viewToRobberCos);
+				robber.FlashlightRadiance = distanceFlashContrib * angleFlashContrib;
 				Debug.DrawLine(robber.transform.position, robber.transform.position + 2 * Vector3.up, Color.red);
 			}
 			else if (Detected != null) Detected(robber, "Remove");
