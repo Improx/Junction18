@@ -28,6 +28,8 @@ public class Robber : MonoBehaviour
 	}
 
 	public void Detain() {
+		if (Detained) return;
+		
 		Detained = true;
         var mover = GetComponent<PlayerMove>();
         mover.enabled = false;
