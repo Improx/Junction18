@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   PlayerModel: {fileID: 1452915685855728}
-  MouseAim: 0
+  MouseAim: 1
   PlayerObject: {fileID: 114453254154903736}
 --- !u!114 &114453254154903736
 MonoBehaviour:
