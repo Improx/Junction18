@@ -10,9 +10,10 @@ public class FieldOfView : MonoBehaviour {
 	public MeshFilter ViewMeshFilter;
 	public LayerMask RayCastMask;
 	public float MaskCutawayDistance = 0.18f;
-	[HideInInspector] public List<DummyRobber> VisibleRobbers = new List<DummyRobber>();
+	[HideInInspector] public List<Robber> VisibleRobbers = new List<Robber>();
 
 	private Mesh _viewMesh;
+	private static FieldOfView _instance;
 
 	// Use this for initialization
 	void Start () {
@@ -85,7 +86,7 @@ public class FieldOfView : MonoBehaviour {
 	private void DetectRobbers()
 	{
 		VisibleRobbers.Clear();
-		foreach (var robber in DummyRobber.All)
+		foreach (var robber in Robber.All)
 		{
 			Vector3 guardToRobber = (robber.transform.position - transform.position);
 			float minCos = Mathf.Cos(Angle * Mathf.Deg2Rad / 2);
@@ -109,5 +110,12 @@ public class FieldOfView : MonoBehaviour {
 	private float GetViewDirectionAngle()
 	{
 		return Mathf.Atan2(GetViewDirection().y, GetViewDirection().x) * Mathf.Rad2Deg; ;
+	}
+
+	public static float GetLightIntensity(Robber robber)
+	{
+		//Temp:
+		if (_instance.VisibleRobbers.Contains(robber)) return 1;
+		else return 0;
 	}
 }
