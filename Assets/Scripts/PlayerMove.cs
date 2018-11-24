@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 public class PlayerMove : NetworkBehaviour
 {
 	public float speed;     
+    public float depth = -0.5f;
     public GameObject PlayerModel;
 	public bool MouseAim;
 
@@ -69,6 +70,7 @@ public class PlayerMove : NetworkBehaviour
         transform.position = spawnPoint.transform.position;
         transform.rotation = spawnPoint.transform.rotation;
 
+        transform.position = new Vector3(transform.position.x, transform.position.y, depth);
         
         if (!isLocalPlayer) return;
     }
