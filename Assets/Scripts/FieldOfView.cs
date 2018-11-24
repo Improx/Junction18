@@ -8,6 +8,7 @@ public class FieldOfView : MonoBehaviour {
 	public float MaxDistance = 5;
 	public float Resolution = 100;
 	public MeshFilter ViewMeshFilter;
+	public MeshFilter ViewMeshFilterForRobbers;
 	public LayerMask RayCastMask;
 	public float MaskCutawayDistance = 0.18f;
 	[HideInInspector] public List<Robber> VisibleRobbers = new List<Robber>();
@@ -23,6 +24,7 @@ public class FieldOfView : MonoBehaviour {
 		_viewMesh = new Mesh();
 		_viewMesh.name = "View Mesh";
 		ViewMeshFilter.mesh = _viewMesh;
+		ViewMeshFilterForRobbers.mesh = _viewMesh;
 	}
 	
 	// Update is called once per frame
