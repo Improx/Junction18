@@ -13,6 +13,7 @@ public class GameManager : NetworkBehaviour {
 	public Text CountText;
 	
 	private void Update() {
+		if (!isServer) return;
 		if (NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers) {
 		    foreach (var player in Players)
 			{
