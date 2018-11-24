@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114339138191822880}
   - component: {fileID: 50597828216906554}
   - component: {fileID: 58616594387308972}
+  - component: {fileID: 114020656961278754}
   m_Layer: 2
   m_Name: PlayerGuard
   m_TagString: Untagged
@@ -288,6 +289,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &114020656961278754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742468539197454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41137249cd6aae4c9982d864729115c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Robs: []
+  Source: {fileID: 0}
+  Alarm: {fileID: 8300000, guid: 6b09e8f14ba272041907775f414690ae, type: 3}
+  Exclamation: {fileID: 0}
+  ExPoint: {fileID: 0}
 --- !u!114 &114047950226630554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce14ba4a912d1419e298b65300337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   depth: -0.5
   PlayerModel: {fileID: 1607576976259100}
   MouseAim: 1
