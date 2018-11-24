@@ -17,8 +17,6 @@ public class Player : NetworkBehaviour {
             vmCam.Follow = transform;
             vmCam.m_Lens.OrthographicSize = 3;
             mainCamera.GetComponent<CinemachineBrain>().enabled = true;
-
-
         }
     }
 }
