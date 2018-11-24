@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114339138191822880}
   - component: {fileID: 50597828216906554}
   - component: {fileID: 58616594387308972}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835945839657950}
   - component: {fileID: 212349904277380066}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4727705793708856}
   - component: {fileID: 33348914471390464}
   - component: {fileID: 23366752800527532}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ViewMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958642468908102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3957314, y: -1.0881664, z: -15.633953}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: -1}
   m_Children: []
   m_Father: {fileID: 4835945839657950}
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742468539197454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.314727, y: 6.624222, z: 0.38476562}
+  m_LocalPosition: {x: 1.336982, y: 0.29637313, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835945839657950}
@@ -280,7 +280,7 @@ MonoBehaviour:
   ViewMeshFilter: {fileID: 33348914471390464}
   RayCastMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 51
   MaskCutawayDistance: 0.1
   VisibleRobbers: []
 --- !u!114 &114396672106363988
