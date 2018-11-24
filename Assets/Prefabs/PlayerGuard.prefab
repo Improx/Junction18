@@ -260,7 +260,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742468539197454}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -300,8 +300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  depth: -0.5
   PlayerModel: {fileID: 1607576976259100}
-  MouseAim: 0
+  MouseAim: 1
   PlayerObject: {fileID: 114242273020117706}
 --- !u!114 &114170260741709736
 MonoBehaviour:
@@ -402,14 +403,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
   m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 0
+  m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
   m_VelocityThreshold: 0.0001
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  m_InterpolateMovement: 100
 --- !u!212 &212218173547580188
 SpriteRenderer:
   m_ObjectHideFlags: 1
