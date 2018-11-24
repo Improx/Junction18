@@ -45,7 +45,6 @@ public class MyNetworkManager : NetworkLobbyManager {
 	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
 		var hasGuard = HasGuard();
 		base.OnServerAddPlayer(conn, playerControllerId);
-		Debug.Log(lobbySlots);
 		
 		var playerSettings= conn.playerControllers[playerControllerId].gameObject.GetComponent<PlayerSettings>();
 		if (!hasGuard) {

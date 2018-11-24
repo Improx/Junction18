@@ -69,7 +69,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1747411113252496
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -112,6 +112,7 @@ Transform:
   m_Children:
   - {fileID: 4703932238363924}
   - {fileID: 4727705793708856}
+  - {fileID: 4835945839657950}
   m_Father: {fileID: 4835082267941424}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -152,7 +153,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4703592045452628}
-  - {fileID: 4835945839657950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -166,8 +166,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4835082267941424}
-  m_RootOrder: 1
+  m_Father: {fileID: 4703592045452628}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23366752800527532
 MeshRenderer:
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Target: {fileID: 4703592045452628}
   m_ChildIndex: 0
   m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 3
+  m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0
   m_InterpolateRotation: 1
@@ -403,14 +403,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
   m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 3
+  m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
+  m_MovementTheshold: 0
+  m_VelocityThreshold: 0
+  m_SnapThreshold: 0
   m_InterpolateRotation: 1
-  m_InterpolateMovement: 100
+  m_InterpolateMovement: 1
 --- !u!212 &212218173547580188
 SpriteRenderer:
   m_ObjectHideFlags: 1

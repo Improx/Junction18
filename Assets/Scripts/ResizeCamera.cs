@@ -37,10 +37,5 @@ public class ResizeCamera : MonoBehaviour
       //Set the orthographic Camera Viewport size and position
       m_OrthographicCamera.rect = new Rect(m_ViewPositionX, m_ViewPositionY, m_ViewWidth, m_ViewHeight);
     }
-
-    if (Player.LocalPlayerTeam == PlayerType.Robber)
-    {
-      GetComponent<PixelPerfectCamera>().enabled = true;
-    }
   }
 }
