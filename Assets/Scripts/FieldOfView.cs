@@ -36,7 +36,6 @@ public class FieldOfView : MonoBehaviour {
 	{
 		float viewDirectionAngle = GetViewDirectionAngle();
 		float lowAngle = viewDirectionAngle - Angle / 2;
-		float highAngle = viewDirectionAngle + Angle / 2;
 		int numRays = Mathf.RoundToInt(Angle * Resolution);
 		float angleIncrement = Angle / numRays;
 
