@@ -26,9 +26,9 @@ public class DetainScreen : MonoBehaviour {
 		DetainText.color *= new Color(1,1,1,0);
 	}
 
-    public static void Hide()
+    public void Hide()
     {
 		_displaying = false;
-		Instance.Screen.gameObject.SetActive(false);
+		Screen.gameObject.SetActive(false);
     }
 }
