@@ -7,6 +7,8 @@ public class Player : NetworkBehaviour {
 
     public CinemachineVirtualCamera RobberCameraPrefab;
 
+	private Robber _robber;
+
     private void Start() {
         if (!isLocalPlayer) return;
 
@@ -22,6 +24,7 @@ public class Player : NetworkBehaviour {
             vmCam.m_Lens.OrthographicSize = 3;
             mainCamera.GetComponent<CinemachineBrain>().enabled = true;
 
+			_robber = gameObject.AddComponent<Robber>();
         }
 
 		else
@@ -49,4 +52,12 @@ public class Player : NetworkBehaviour {
         var mover = GetComponent<PlayerMove>();
         mover.enabled = false;
     }
+
+	private void Update()
+	{
+		if (isLocalPlayer && Team == PlayerType.Robber)
+		{
+			FlashScreenOverlay.SetAmount(_robber.FlashlightRadiance);
+		}
+	}
 }
