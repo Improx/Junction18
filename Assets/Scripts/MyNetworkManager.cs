@@ -20,7 +20,7 @@ public class MyNetworkManager : NetworkLobbyManager {
     public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
     {
 		GameObject playerPrefab;
-		if (conn.address == "localClient") {
+		if (0 == playerControllerId) {
 			playerPrefab = GuardPrefab;
 		} else {
 			playerPrefab = RobberPrefab;

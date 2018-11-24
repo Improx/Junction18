@@ -15,7 +15,7 @@ public class Player : NetworkBehaviour {
 
             var vmCam = Instantiate(RobberCameraPrefab, new Vector3(0, 0, -200), new Quaternion());
             var nightVision = vmCam.gameObject.AddComponent<DeferredNightVisionEffect>();
-            nightVision.m_LightSensitivityMultiplier = 0;
+            nightVision.m_LightSensitivityMultiplier = 0.1f;
 
             vmCam.GetComponent<Camera>().orthographic = true;
             vmCam.Follow = transform;
@@ -29,5 +29,24 @@ public class Player : NetworkBehaviour {
 			//We are Guard
 
 		}
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        var otherPlayer = other.rigidbody.GetComponent<Player>();
+
+        if (!otherPlayer) return;
+
+        if (otherPlayer
+            && otherPlayer.Team == PlayerType.Robber
+            && Team == PlayerType.Guard) {
+            GameManager.Instance.CmdCapture(this.gameObject, otherPlayer.gameObject);
+        }
+    }
+    
+    [ClientRpc]
+    public void RpcGetCaptured()
+    {
+        var mover = GetComponent<PlayerMove>();
+        mover.enabled = false;
     }
 }
