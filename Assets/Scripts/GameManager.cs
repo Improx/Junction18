@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
@@ -10,18 +11,30 @@ public class GameManager : NetworkBehaviour {
 	public Text CountText;
 	
 	private void Update() {
+		if (!isLocalPlayer) return;
+
 		CountText.text = "Items stolen: " + RobberPoints.ToString();
+
+		
+		if (NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers) {
+		    foreach (var player in Players)
+			{
+				player.RpcDisplayEndSCreen();
+			}
+		}
 	}
 
 	private void Awake() {
 		Instance = this;
 	}
 
+	public List<Player> Players => new List<Player>(FindObjectsOfType<Player>());
+
 	public int NumOfRobbers => Robber.All.Count;
-	public int NumOfDetainedRobbers => 0;
+	public int NumOfDetainedRobbers => Robber.All.FindAll(x => x.Detained).Count;
 
 	public int NumOfItems => 0;
-	public int NumOfStolenItems => 0;
+	public int NumOfStolenItems => RobberPoints;
 
 	[Command]
 	public void CmdCapture(GameObject guard, GameObject robber) {
@@ -29,5 +42,6 @@ public class GameManager : NetworkBehaviour {
 			&& robber.GetComponent<Player>().Team != PlayerType.Robber) return;
 
 		robber.GetComponent<Player>().RpcGetCaptured();
+		robber.GetComponent<Robber>().Detained = true;
 	}
 }

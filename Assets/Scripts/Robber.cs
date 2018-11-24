@@ -7,6 +7,8 @@ public class Robber : MonoBehaviour
 
 	public float FlashlightRadiance = 0;
 
+	public bool Detained;
+
 	public static List<Robber> All = new List<Robber>();
 
 	// Use this for initialization
@@ -23,5 +25,16 @@ public class Robber : MonoBehaviour
 	private void OnDestroy()
 	{
 		All.Remove(this);
+	}
+
+	public void Detain() {
+		Detained = true;
+        var mover = GetComponent<PlayerMove>();
+        mover.enabled = false;
+		var rigidBody = GetComponent<Rigidbody2D>();
+
+		rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+
+		DetainScreen.Instance.Display();
 	}
 }

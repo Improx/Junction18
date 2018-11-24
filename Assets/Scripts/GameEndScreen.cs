@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameEndScreen : MonoBehaviour {
 
-	public GameObject EndScreen;
+	public Image EndScreen;
 	public TextMeshProUGUI	DetainedText;
 	public TextMeshProUGUI	StolenText;
 
@@ -18,9 +19,12 @@ public class GameEndScreen : MonoBehaviour {
 
     public void Display()
     {
-        EndScreen.SetActive(true);
+		DetainScreen.Hide();
+        EndScreen.gameObject.SetActive(true);
+		EndScreen.color *= new Color(1, 1, 1, 0);
 		DetainedText.text = $"Robbers detained: {GameManager.Instance.NumOfDetainedRobbers} / {GameManager.Instance.NumOfRobbers}";
+		DetainedText.color *= new Color(1, 1, 1, 0);
 		StolenText.text = $"Items stolen: {GameManager.Instance.NumOfStolenItems} / {GameManager.Instance.NumOfItems}";
-
+		DetainedText.color *= new Color(1, 1, 1, 0);
     }
 }

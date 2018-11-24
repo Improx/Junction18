@@ -71,8 +71,9 @@ public class Player : NetworkBehaviour
     [ClientRpc]
     public void RpcGetCaptured()
     {
-        var mover = GetComponent<PlayerMove>();
-        mover.enabled = false;
+        if (isLocalPlayer) {
+            GetComponent<Robber>().Detain();
+        }
     }
 
     [ClientRpc]
