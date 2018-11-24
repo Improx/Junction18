@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114934193636280576}
   - component: {fileID: 50160770408742660}
   - component: {fileID: 58625500576248844}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerRobber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4354197507786006}
   - component: {fileID: 212628507321421786}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4305846191744702}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HeldItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
