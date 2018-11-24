@@ -15,7 +15,7 @@ public class Player : NetworkBehaviour {
 
             var vmCam = Instantiate(RobberCameraPrefab, new Vector3(0, 0, -200), new Quaternion());
             var nightVision = vmCam.gameObject.AddComponent<DeferredNightVisionEffect>();
-            nightVision.m_LightSensitivityMultiplier = 0;
+            nightVision.m_LightSensitivityMultiplier = 0.1f;
 
             vmCam.GetComponent<Camera>().orthographic = true;
             vmCam.Follow = transform;
