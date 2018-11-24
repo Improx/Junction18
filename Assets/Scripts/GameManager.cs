@@ -8,12 +8,11 @@ public class GameManager : NetworkBehaviour {
 	
 	public static GameManager Instance { get; private set; }
 
+	[SyncVar]
 	public int RobberPoints = 0;
 	public Text CountText;
 	
 	private void Update() {
-		if (!isLocalPlayer) return;
-		
 		if (NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers) {
 		    foreach (var player in Players)
 			{
