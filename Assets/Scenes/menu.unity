@@ -248,7 +248,7 @@ MonoBehaviour:
   m_GamePlayerPrefab: {fileID: 1742468539197454, guid: 0a42431b95f7d5548a5466dd224fdde6,
     type: 2}
   m_LobbyScene: menu
-  m_PlayScene: SampleScene
+  m_PlayScene: RobberCamera
   lobbySlots: []
   GuardPrefab: {fileID: 1742468539197454, guid: 0a42431b95f7d5548a5466dd224fdde6,
     type: 2}

@@ -263,6 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Team: 0
+  RobberCameraPrefab: {fileID: 114101591288696330, guid: 93a887456f1ba644b9636530f20eca81,
+    type: 2}
 --- !u!114 &114339138191822880
 MonoBehaviour:
   m_ObjectHideFlags: 1

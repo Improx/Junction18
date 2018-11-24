@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: 0e8fa450f15177348ab2e0848fa1ecb9
   - enabled: 1
-    path: Assets/Scenes/proto.unity
-    guid: 7a8f00ed71d05854999bfb0cc3b2d853
-  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/RobberCamera.unity
+    guid: 3f69c66ff244b334cbe07ff9bae1e98d
   m_configObjects: {}
