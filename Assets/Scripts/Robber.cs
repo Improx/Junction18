@@ -15,6 +15,11 @@ public class Robber : MonoBehaviour
 		All.Add(this);
 	}
 
+	private void Start()
+	{
+		if (!GetComponent<Player>().isLocalPlayer) GetComponentInChildren<SpriteRenderer>().enabled = false;
+	}
+
 	private void OnDestroy()
 	{
 		All.Remove(this);

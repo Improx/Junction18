@@ -102,7 +102,7 @@ public class FieldOfView : MonoBehaviour {
 			float minCos = Mathf.Cos(Angle * Mathf.Deg2Rad / 2);
 			float viewToRobberCos = Vector3.Dot(guardToRobber.normalized, GetViewDirection());
 			bool withinFOV = viewToRobberCos >= minCos;
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, guardToRobber.normalized, MaxDistance, RayCastMask);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, guardToRobber.normalized, guardToRobber.magnitude, RayCastMask);
 			bool obstacleInWay = hit.collider != null;
 			bool withinDistance = guardToRobber.magnitude <= MaxDistance;
 			if (withinFOV && !obstacleInWay && withinDistance)

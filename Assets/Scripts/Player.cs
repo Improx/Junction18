@@ -14,6 +14,12 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
+		//On both cases, if we're local player or not:
+		if (Team == PlayerType.Robber)
+		{
+			_robber = gameObject.AddComponent<Robber>();
+		}
+		//If we're not local player:
 		if (!isLocalPlayer)
 		{
 			if (Team == PlayerType.Guard)
@@ -24,7 +30,6 @@ public class Player : NetworkBehaviour
 			return;
 		}
 		//We are local player:
-
         if (Team == PlayerType.Robber)
         {
             var mainCamera = FindObjectOfType<Camera>();
@@ -38,8 +43,6 @@ public class Player : NetworkBehaviour
             vmCam.m_Lens.OrthographicSize = 3;
             mainCamera.GetComponent<CinemachineBrain>().enabled = true;
             mainCamera.GetComponent<PixelPerfectCamera>().enabled = true;
-
-            _robber = gameObject.AddComponent<Robber>();
 
 			BigStencilMask.Instance.transform.position = new Vector3(BigStencilMask.Instance.transform.position.x, BigStencilMask.Instance.transform.position.y, -10);
 		}
