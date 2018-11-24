@@ -40,20 +40,19 @@ public class FieldOfView : MonoBehaviour {
 		float angleIncrement = Angle / numRays;
 
 		//Shoot rays and save hit points:
-		List<Vector3> hitPoints = new List<Vector3>();
+		List<Vector2> hitPoints = new List<Vector2>();
 		for (int i = 0; i < numRays; i++)
 		{
 			float rayAngle = lowAngle + angleIncrement * i;
-			Vector3 rayDir = AngleToDirection(rayAngle);
-			RaycastHit hit;
-			bool didHit = Physics.Raycast(transform.position, rayDir, out hit, maxDistance: MaxDistance, layerMask: RayCastMask);
-			if (didHit)
+			Vector2 rayDir = AngleToDirection(rayAngle);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, distance: MaxDistance, layerMask: RayCastMask);
+			if (hit.collider != null)
 			{
 				hitPoints.Add(transform.InverseTransformPoint(hit.point + MaskCutawayDistance * rayDir));
 			}
 			else
 			{
-				hitPoints.Add(transform.InverseTransformPoint((transform.position + rayDir * MaxDistance)));
+				hitPoints.Add(transform.InverseTransformPoint(((Vector2)transform.position + rayDir * MaxDistance)));
 			}
 		}
 
@@ -94,8 +93,8 @@ public class FieldOfView : MonoBehaviour {
 			Vector3 guardToRobber = (robber.transform.position - transform.position);
 			float minCos = Mathf.Cos(Angle * Mathf.Deg2Rad / 2);
 			bool withinFOV = Vector3.Dot(guardToRobber.normalized, GetViewDirection()) >= minCos;
-			RaycastHit hit;
-			bool obstacleInWay = Physics.Raycast(transform.position, guardToRobber.normalized, out hit, MaxDistance, RayCastMask);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, guardToRobber.normalized, MaxDistance, RayCastMask);
+			bool obstacleInWay = hit.collider != null;
 			bool withinDistance = guardToRobber.magnitude <= MaxDistance;
 			if (withinFOV && !obstacleInWay && withinDistance)
 			{
@@ -117,7 +116,7 @@ public class FieldOfView : MonoBehaviour {
 		return Mathf.Atan2(GetViewDirection().y, GetViewDirection().x) * Mathf.Rad2Deg; ;
 	}
 
-	public static float GetLightIntensity(Robber robber)
+	public static float GetLightRadiance(Robber robber)
 	{
 		//Temp:
 		if (_instance.VisibleRobbers.Contains(robber)) return 1;

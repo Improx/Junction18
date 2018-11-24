@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 78246907}
   - component: {fileID: 78246911}
   - component: {fileID: 78246910}
-  - component: {fileID: 78246909}
   - component: {fileID: 78246908}
+  - component: {fileID: 78246909}
   m_Layer: 8
   m_Name: Robber (2)
   m_TagString: Robber
@@ -156,18 +156,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc36ea9f146c9c42a390056a11b9ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &78246909
-SphereCollider:
+--- !u!58 &78246909
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 78246906}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &78246910
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -241,18 +244,31 @@ Transform:
   m_Father: {fileID: 1768337932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.315}
---- !u!65 &220807946
-BoxCollider:
+--- !u!61 &220807946
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 220807944}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.99999994, y: 1.0000001}
+  m_EdgeRadius: 0
 --- !u!23 &220807947
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -642,18 +658,31 @@ Transform:
   m_Father: {fileID: 1768337932}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 88.383}
---- !u!65 &1020158004
-BoxCollider:
+--- !u!61 &1020158004
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1020158002}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.0000001}
+  m_EdgeRadius: 0
 --- !u!23 &1020158005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -814,18 +843,31 @@ Transform:
   m_Father: {fileID: 1768337932}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 114.130005}
---- !u!65 &1326723544
-BoxCollider:
+--- !u!61 &1326723544
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1326723542}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000004, y: 1.0000004}
+  m_EdgeRadius: 0
 --- !u!23 &1326723545
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -878,8 +920,8 @@ GameObject:
   - component: {fileID: 1342487361}
   - component: {fileID: 1342487365}
   - component: {fileID: 1342487364}
-  - component: {fileID: 1342487363}
   - component: {fileID: 1342487362}
+  - component: {fileID: 1342487363}
   m_Layer: 8
   m_Name: Robber
   m_TagString: Robber
@@ -911,18 +953,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc36ea9f146c9c42a390056a11b9ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &1342487363
-SphereCollider:
+--- !u!58 &1342487363
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1342487360}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1342487364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -996,18 +1041,31 @@ Transform:
   m_Father: {fileID: 1768337932}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 38.457}
---- !u!65 &1387949310
-BoxCollider:
+--- !u!61 &1387949310
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1387949308}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.99999994, y: 1}
+  m_EdgeRadius: 0
 --- !u!23 &1387949311
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1092,8 +1150,8 @@ GameObject:
   - component: {fileID: 1506802652}
   - component: {fileID: 1506802656}
   - component: {fileID: 1506802655}
-  - component: {fileID: 1506802654}
   - component: {fileID: 1506802653}
+  - component: {fileID: 1506802654}
   m_Layer: 8
   m_Name: Robber (1)
   m_TagString: Robber
@@ -1125,18 +1183,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc36ea9f146c9c42a390056a11b9ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &1506802654
-SphereCollider:
+--- !u!58 &1506802654
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1506802651}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1506802655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1210,18 +1271,31 @@ Transform:
   m_Father: {fileID: 1768337932}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 61.992004}
---- !u!65 &1625583825
-BoxCollider:
+--- !u!61 &1625583825
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1625583823}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000002, y: 1.0000002}
+  m_EdgeRadius: 0
 --- !u!23 &1625583826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1329,18 +1403,31 @@ Transform:
   m_Father: {fileID: 1768337932}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 61.992004}
---- !u!65 &1778825548
-BoxCollider:
+--- !u!61 &1778825548
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778825546}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000001, y: 1.0000001}
+  m_EdgeRadius: 0
 --- !u!23 &1778825549
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1393,8 +1480,8 @@ GameObject:
   - component: {fileID: 1836684955}
   - component: {fileID: 1836684959}
   - component: {fileID: 1836684958}
-  - component: {fileID: 1836684957}
   - component: {fileID: 1836684956}
+  - component: {fileID: 1836684957}
   m_Layer: 8
   m_Name: Robber (3)
   m_TagString: Robber
@@ -1426,18 +1513,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc36ea9f146c9c42a390056a11b9ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &1836684957
-SphereCollider:
+--- !u!58 &1836684957
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836684954}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1836684958
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23792932122489674}
   - component: {fileID: 64555942179700214}
   - component: {fileID: 114034221877987954}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EditorStencilMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1914069104174168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.82240486, y: 3.035747, z: 1.953125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4633669294258856}
