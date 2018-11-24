@@ -15,9 +15,6 @@ public class ResizeCamera : MonoBehaviour {
 
   void Start()
   {
-      float tilemapX = _map.size.x;
-      float tilemapY = _map.size.y;
-      //This sets the Camera view rectangle to be in the bottom corner of the screen
       m_ViewPositionX = 0;
       m_ViewPositionY = 0;
 
@@ -34,7 +31,7 @@ public class ResizeCamera : MonoBehaviour {
           //This enables the orthographic mode
           m_OrthographicCamera.orthographic = true;
           //Set the size of the viewing volume you'd like the orthographic Camera to pick up (5)
-          m_OrthographicCamera.orthographicSize = tilemapY / 2f;//(Mathf.Pow(((tilemapY * 16f/9f)/tilemapY), 2f) * 1.1f);
+          m_OrthographicCamera.orthographicSize = _map.size.y / 2f;//(Mathf.Pow(((tilemapY * 16f/9f)/tilemapY), 2f) * 1.1f);
           //Set the orthographic Camera Viewport size and position
           m_OrthographicCamera.rect = new Rect(m_ViewPositionX, m_ViewPositionY, m_ViewWidth, m_ViewHeight);
       }
