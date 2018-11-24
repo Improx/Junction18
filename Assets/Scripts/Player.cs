@@ -14,7 +14,16 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
-        if (!isLocalPlayer) return;
+		if (!isLocalPlayer)
+		{
+			if (Team == PlayerType.Guard)
+			{
+				Transform robberLight = GetComponentInChildren<FlashlightAreaRobbers>().transform;
+				robberLight.position = new Vector3(robberLight.position.x, robberLight.position.y, 0);
+			}
+			return;
+		}
+		//We are local player:
 
         if (Team == PlayerType.Robber)
         {
@@ -31,7 +40,9 @@ public class Player : NetworkBehaviour
             mainCamera.GetComponent<PixelPerfectCamera>().enabled = true;
 
             _robber = gameObject.AddComponent<Robber>();
-        }
+
+			BigStencilMask.Instance.transform.position = new Vector3(BigStencilMask.Instance.transform.position.x, BigStencilMask.Instance.transform.position.y, -10);
+		}
 
         else
         {

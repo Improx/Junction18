@@ -33,7 +33,7 @@ public class PlayerMove : NetworkBehaviour
             faceMouse();
         } else {
             var rotate = Input.GetAxis("LookHorizontal") * Time.deltaTime * 150.0f;
-            PlayerModel.transform.Rotate(0, 0, rotate);
+            transform.Rotate(0, 0, rotate);
         }
 
         if (Input.GetButtonDown("ToggleMouse")) {

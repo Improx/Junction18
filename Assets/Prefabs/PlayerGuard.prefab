@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 114242273020117706}
   - component: {fileID: 114047950226630554}
   - component: {fileID: 114396672106363988}
-  - component: {fileID: 114224287823637776}
   - component: {fileID: 114339138191822880}
   - component: {fileID: 50597828216906554}
   - component: {fileID: 58616594387308972}
@@ -93,6 +92,7 @@ GameObject:
   - component: {fileID: 4727705793708856}
   - component: {fileID: 33348914471390464}
   - component: {fileID: 23366752800527532}
+  - component: {fileID: 114663546593250814}
   m_Layer: 2
   m_Name: FlashlightMeshForRobbers
   m_TagString: Untagged
@@ -149,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742468539197454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.272142, y: 11.00763, z: 0}
+  m_LocalPosition: {x: 21.640757, y: 1.2249894, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4703592045452628}
@@ -272,7 +272,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &58616594387308972
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -336,25 +336,6 @@ MonoBehaviour:
     i15: 230
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114224287823637776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742468539197454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 4703592045452628}
-  m_ChildIndex: 0
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 0
 --- !u!114 &114242273020117706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,6 +392,17 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114663546593250814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958642468908102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efd36958ef5e994db91751062e0d539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212218173547580188
 SpriteRenderer:
   m_ObjectHideFlags: 1
