@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
   m_OfflineScene: menu
-  m_OnlineScene: proto
+  m_OnlineScene: 
   m_SpawnPrefabs: []
   m_CustomConfig: 0
   m_MaxConnections: 4
@@ -226,7 +226,7 @@ MonoBehaviour:
     m_MaxTimerTimeout: 12000
     m_MinNetSimulatorTimeout: 1
     m_MaxNetSimulatorTimeout: 12000
-  m_Channels: 
+  m_Channels: 0500000000000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
@@ -239,11 +239,20 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
-  GuardSpawnPoints: []
-  ThiefSpawnPoints: []
+  m_ShowLobbyGUI: 1
+  m_MaxPlayers: 4
+  m_MaxPlayersPerConnection: 1
+  m_MinPlayers: 1
+  m_LobbyPlayerPrefab: {fileID: 114151462852191368, guid: 2c14ce827e707544f81926ca99123940,
+    type: 2}
+  m_GamePlayerPrefab: {fileID: 1742468539197454, guid: 0a42431b95f7d5548a5466dd224fdde6,
+    type: 2}
+  m_LobbyScene: menu
+  m_PlayScene: SampleScene
+  lobbySlots: []
   GuardPrefab: {fileID: 1742468539197454, guid: 0a42431b95f7d5548a5466dd224fdde6,
     type: 2}
-  ThiefPrefab: {fileID: 1236575233429154, guid: ca663988dca53be499e9fd325d6c77b0,
+  RobberPrefab: {fileID: 1236575233429154, guid: ca663988dca53be499e9fd325d6c77b0,
     type: 2}
 --- !u!1 &2133361694
 GameObject:
