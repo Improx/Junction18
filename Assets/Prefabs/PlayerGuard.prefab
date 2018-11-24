@@ -321,6 +321,8 @@ MonoBehaviour:
   PlayerModel: {fileID: 1607576976259100}
   MouseAim: 1
   PlayerObject: {fileID: 114242273020117706}
+  dustCloud: {fileID: 198285992810710268, guid: 15806d12b9a39482c9de2de90c8e6a16,
+    type: 2}
 --- !u!114 &114170260741709736
 MonoBehaviour:
   m_ObjectHideFlags: 1

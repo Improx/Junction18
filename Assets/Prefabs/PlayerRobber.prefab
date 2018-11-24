@@ -126,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1236575233429154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.960037, y: -0.03057605, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4354197507786006}
@@ -186,6 +186,8 @@ MonoBehaviour:
   PlayerModel: {fileID: 1452915685855728}
   MouseAim: 1
   PlayerObject: {fileID: 114453254154903736}
+  dustCloud: {fileID: 198285992810710268, guid: 15806d12b9a39482c9de2de90c8e6a16,
+    type: 2}
 --- !u!114 &114391596290257162
 MonoBehaviour:
   m_ObjectHideFlags: 1
