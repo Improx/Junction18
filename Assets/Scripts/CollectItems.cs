@@ -14,7 +14,7 @@ public class CollectItems : MonoBehaviour
             {
                 currentItem.parent = null;
 
-                currentItem.position = transform.GetComponent<SpriteRenderer>().bounds.max;
+                currentItem.position = transform.GetComponent<Transform>().position;
                 currentItem = null;
             }
         }

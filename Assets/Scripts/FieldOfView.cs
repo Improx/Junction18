@@ -16,6 +16,9 @@ public class FieldOfView : MonoBehaviour {
 	private Mesh _viewMesh;
 	private static FieldOfView _instance;
 
+	public delegate void DetectionEvent(Robber r, string status);
+	public static event DetectionEvent Detected;
+
 	// Use this for initialization
 	void Start () {
 		_viewMesh = new Mesh();
@@ -102,10 +105,12 @@ public class FieldOfView : MonoBehaviour {
 			bool withinDistance = guardToRobber.magnitude <= MaxDistance;
 			if (withinFOV && !obstacleInWay && withinDistance)
 			{
+				if (Detected != null) Detected(robber, "Add");
 				VisibleRobbers.Add(robber);
 				robber.FlashlightRadiance = 1 / guardToRobber.magnitude + Mathf.InverseLerp(0, minCos, viewToRobberCos);
 				Debug.DrawLine(robber.transform.position, robber.transform.position + 2 * Vector3.up, Color.red);
 			}
+			else if (Detected != null) Detected(robber, "Remove");
 		}
 	}
 
