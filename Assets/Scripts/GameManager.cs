@@ -10,7 +10,7 @@ public class GameManager : NetworkBehaviour {
 	public Text CountText;
 	
 	private void Update() {
-		CountText.text = "Treasures stolen: " + RobberPoints.ToString();
+		CountText.text = "Items stolen: " + RobberPoints.ToString();
 	}
 
 	private void Awake() {
