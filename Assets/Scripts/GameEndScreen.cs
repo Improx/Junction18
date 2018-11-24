@@ -11,6 +11,8 @@ public class GameEndScreen : MonoBehaviour {
 	public TextMeshProUGUI	DetainedText;
 	public TextMeshProUGUI	StolenText;
 
+	private bool _displaying;
+
 	public static GameEndScreen Instance { get; private set; }
 
 	private void Awake() {
@@ -19,6 +21,9 @@ public class GameEndScreen : MonoBehaviour {
 
     public void Display()
     {
+		if (_displaying) return;
+		_displaying = true;
+		Debug.Log("Endscreen display");
 		DetainScreen.Hide();
         EndScreen.gameObject.SetActive(true);
 		EndScreen.color *= new Color(1, 1, 1, 0);

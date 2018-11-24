@@ -9,6 +9,7 @@ public class DetainScreen : MonoBehaviour {
 
 	public Image Screen;
 	public TextMeshProUGUI DetainText;
+    private bool _displaying;
 
     public static DetainScreen Instance { get; private set; }
 
@@ -17,6 +18,9 @@ public class DetainScreen : MonoBehaviour {
 	}
 
 	public void Display() {
+		if (_displaying) return;
+		_displaying = true;
+		Debug.Log("Detained display");
 		Instance.Screen.gameObject.SetActive(true);
 		Screen.color *= new Color(1,1,1,0);
 		DetainText.color *= new Color(1,1,1,0);
@@ -24,6 +28,7 @@ public class DetainScreen : MonoBehaviour {
 
     public static void Hide()
     {
+		_displaying = false;
 		Instance.Screen.gameObject.SetActive(false);
     }
 }
