@@ -10,6 +10,7 @@ public class PlayerMove : NetworkBehaviour
 	public bool MouseAim;
 
     public Player PlayerObject;
+    public ParticleSystem dustCloud;
 
     private Rigidbody2D rb2d;
 
@@ -39,6 +40,12 @@ public class PlayerMove : NetworkBehaviour
         if (Input.GetButtonDown("ToggleMouse")) {
             MouseAim = !MouseAim;
         }
+    }
+
+    private void LateUpdate() {
+      if(rb2d.velocity != Vector2.zero) {
+          Instantiate(dustCloud, transform.position, dustCloud.transform.rotation);
+      }
     }
 
     void faceMouse() {
