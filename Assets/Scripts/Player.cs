@@ -2,28 +2,11 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.U2D;
 
 public class Player : NetworkBehaviour
 {
     public PlayerType Team;
-
-    public bool IsLocalPlayer
-    {
-        get
-        {
-            return isLocalPlayer;
-        }
-    }
-
-    public static PlayerType LocalPlayerTeam
-    {
-        get
-        {
-            var players = new List<Player>(FindObjectsOfType<Player>());
-            var localPlayer = players.Find(x => x.IsLocalPlayer == true);
-            return localPlayer.Team;
-        }
-    }
 
     public CinemachineVirtualCamera RobberCameraPrefab;
 
@@ -45,6 +28,7 @@ public class Player : NetworkBehaviour
             vmCam.Follow = transform;
             vmCam.m_Lens.OrthographicSize = 3;
             mainCamera.GetComponent<CinemachineBrain>().enabled = true;
+            mainCamera.GetComponent<PixelPerfectCamera>().enabled = true;
 
             _robber = gameObject.AddComponent<Robber>();
         }
