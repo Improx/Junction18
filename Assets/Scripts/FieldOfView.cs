@@ -14,7 +14,6 @@ public class FieldOfView : MonoBehaviour {
 	[HideInInspector] public List<Robber> VisibleRobbers = new List<Robber>();
 
 	private Mesh _viewMesh;
-	private static FieldOfView _instance;
 
 	public delegate void DetectionEvent(Robber r, string status);
 	public static event DetectionEvent Detected;
@@ -89,8 +88,11 @@ public class FieldOfView : MonoBehaviour {
 
 	private void DetectRobbers()
 	{
+		if (GetComponent<Player>().Team == PlayerType.Robber) return;
+
 		foreach (var robber in VisibleRobbers)
 		{
+			robber.GetComponentInChildren<SpriteRenderer>().enabled = false;
 			robber.FlashlightRadiance = 0;
 		}
 		VisibleRobbers.Clear();
@@ -107,6 +109,7 @@ public class FieldOfView : MonoBehaviour {
 			{
 				if (Detected != null) Detected(robber, "Add");
 				VisibleRobbers.Add(robber);
+				robber.GetComponentInChildren<SpriteRenderer>().enabled = true;
 				robber.FlashlightRadiance = 1 / guardToRobber.magnitude + Mathf.InverseLerp(0, minCos, viewToRobberCos);
 				Debug.DrawLine(robber.transform.position, robber.transform.position + 2 * Vector3.up, Color.red);
 			}
@@ -124,10 +127,4 @@ public class FieldOfView : MonoBehaviour {
 		return Mathf.Atan2(GetViewDirection().y, GetViewDirection().x) * Mathf.Rad2Deg; ;
 	}
 
-	public static float GetLightRadiance(Robber robber)
-	{
-		//Temp:
-		if (_instance.VisibleRobbers.Contains(robber)) return 1;
-		else return 0;
-	}
 }
