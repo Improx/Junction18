@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
@@ -52,6 +53,11 @@ public class Player : NetworkBehaviour
             //We are Guard
 
         }
+    }
+
+    public void GrabItem(GameObject item)
+    {
+        GameManager.Instance.CmdGrab(gameObject, item);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

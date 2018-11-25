@@ -24,9 +24,7 @@ public class CollectItems : MonoBehaviour
         // pickup with left click if object has item tag 
         if (other.CompareTag("Item") && currentItem == null && Input.GetButtonDown("Fire1"))
         {
-            currentItem = other.transform;
-            currentItem.position = carryLocation.position;
-            currentItem.parent = transform;
+            GetComponent<Player>().GrabItem(other.gameObject);
         }
     }
 }
