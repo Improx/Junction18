@@ -94,7 +94,7 @@ public class FieldOfView : MonoBehaviour {
 	{
 		if (GetComponent<Player>().Team == PlayerType.Robber) return;
 
-		foreach (var robber in VisibleRobbers)
+		foreach (var robber in Robber.All)
 		{
 			//If player and guard:
 			if (GetComponent<Player>().isLocalPlayer) robber.GetComponentInChildren<SpriteRenderer>().enabled = false;
