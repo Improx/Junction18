@@ -250,7 +250,7 @@ MonoBehaviour:
   m_LobbyScene: menu
   m_PlayScene: SampleScene
   lobbySlots: []
-  GuardPrefab: {fileID: 1236575233429154, guid: ca663988dca53be499e9fd325d6c77b0,
+  GuardPrefab: {fileID: 1742468539197454, guid: 0a42431b95f7d5548a5466dd224fdde6,
     type: 2}
   RobberPrefab: {fileID: 1236575233429154, guid: ca663988dca53be499e9fd325d6c77b0,
     type: 2}

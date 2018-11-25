@@ -57,6 +57,7 @@ public class Player : NetworkBehaviour
 
     public void GrabItem(Item item)
     {
+        if (!isLocalPlayer) return;
         GameManager.Instance.CmdGrab(gameObject, item.ItemType);
     }
 
