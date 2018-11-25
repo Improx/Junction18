@@ -19,7 +19,7 @@ public class Robber : MonoBehaviour
 
 	private void Start()
 	{
-		if (!GetComponent<Player>().isLocalPlayer) GetComponentInChildren<SpriteRenderer>().enabled = false;
+		//if (!GetComponent<Player>().isLocalPlayer) GetComponentInChildren<SpriteRenderer>().enabled = false;
 	}
 
 	private void OnDestroy()
