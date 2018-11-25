@@ -58,8 +58,39 @@ public class Player : NetworkBehaviour
     public void GrabItem(Item item)
     {
         if (!isLocalPlayer) return;
-        GameManager.Instance.CmdGrab(gameObject, item.ItemType);
+
+        CmdGrab(gameObject, item.gameObject);
     }
+	
+	[Command]
+	public void CmdGrab(GameObject player, GameObject item) {
+
+		RpcGrab(item);
+	}
+
+	[ClientRpc]
+	public void RpcGrab(GameObject item) {
+        item.transform.parent= GetComponent<CollectItems>().carryLocation;
+	}
+	
+
+    public void UnGrab(Item item)
+    {
+        if (!isLocalPlayer) return;
+
+        CmdUnGrab(item.gameObject);
+    }
+	[Command]
+	public void CmdUnGrab(GameObject item) {
+
+		RpcUnGrab(item);
+	}
+
+	[ClientRpc]
+	public void RpcUnGrab(GameObject item) {
+        item.transform.parent = null;
+        item.transform.position = GetComponent<Transform>().position;
+	}
 
     private void OnCollisionEnter2D(Collision2D other)
     {

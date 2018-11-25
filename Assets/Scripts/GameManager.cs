@@ -49,20 +49,4 @@ public class GameManager : NetworkBehaviour
 		robber.GetComponent<Player>().RpcGetCaptured();
 		robber.GetComponent<Robber>().Detained = true;
 	}
-	
-	[Command]
-	public void CmdGrab(GameObject player, int itemId) {
-		if (player.GetComponent<Player>().Team == PlayerType.Guard) return;
-
-		RpcGrab(player, itemId);
-	}
-
-	[ClientRpc]
-	public void RpcGrab(GameObject player, int itemId) {
-
-		var objects = new List<Item>(FindObjectsOfType<Item>()).FindAll(x => x.ItemType == itemId);
-		objects.ForEach(x => Destroy(x.gameObject));
-
-		Instantiate(ItemPrefabs[itemId], player.GetComponent<CollectItems>().carryLocation, false);
-	}
 }
