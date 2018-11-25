@@ -28,7 +28,7 @@ public class PlayerMove : NetworkBehaviour
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-        if (CollItems.currentItem != null) rb2d.velocity = movement * (speed - 1.0f);
+        if (CollItems != null && CollItems.currentItem != null) rb2d.velocity = movement * (speed - 0.5f);
         else rb2d.velocity = movement * speed;
 
         if (MouseAim)
