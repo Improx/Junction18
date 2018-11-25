@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c219eebb6e194649b07a7271202b03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Team: 1
+  Team: 0
   RobberCameraPrefab: {fileID: 114101591288696330, guid: 93a887456f1ba644b9636530f20eca81,
     type: 2}
 --- !u!114 &114934193636280576

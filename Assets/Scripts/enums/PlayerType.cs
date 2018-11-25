@@ -1,5 +1,5 @@
 public enum PlayerType
 {
-    Guard,
-    Robber
+    Robber,
+    Guard
 }
