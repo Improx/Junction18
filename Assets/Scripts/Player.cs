@@ -75,6 +75,7 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer) {
             GetComponent<Robber>().Detain();
         }
+        GetComponent<Robber>().Detained = true;
     }
 
     [ClientRpc]
