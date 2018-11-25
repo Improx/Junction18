@@ -6,7 +6,6 @@ public class DetectionHandler : MonoBehaviour {
 
 	public List<Robber> Robs;
 	public GameObject Source;
-	public AudioClip Alarm;
 	public GameObject Exclamation;
 	public SpriteRenderer ExPoint;
 	void OnEnable () => FieldOfView.Detected += PlayEffects;
