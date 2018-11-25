@@ -13,6 +13,7 @@ public class PlayerMove : NetworkBehaviour
 
     private Rigidbody2D rb2d;
 
+    private CollectItems CollItems;
     void Update()
     {
         if (!isLocalPlayer) return;
@@ -27,7 +28,8 @@ public class PlayerMove : NetworkBehaviour
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-        rb2d.velocity = movement * speed;
+        if (CollItems != null && CollItems.currentItem != null) rb2d.velocity = movement * (speed - 0.5f);
+        else rb2d.velocity = movement * speed;
 
         if (MouseAim)
         {
@@ -61,6 +63,7 @@ public class PlayerMove : NetworkBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        CollItems = GetComponent<CollectItems>();
 
         PlayerSpawnPoint spawnPoint;
         if (PlayerObject.Team == PlayerType.Guard)
