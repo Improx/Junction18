@@ -9,4 +9,8 @@ public class SceneChanger : MonoBehaviour
 	{
 		SceneManager.LoadScene(scene);
 	}
+	public static void QuickChangeScene(string scene)
+	{
+		SceneManager.LoadScene(scene);
+	}
 }

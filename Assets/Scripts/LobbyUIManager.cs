@@ -90,7 +90,7 @@ public class LobbyUIManager : MonoBehaviour {
 	}
 
 	public void Disconnect() {
-		CloseLobby();
-		lobbyManager.backDelegate();
+		DestroyImmediate(MyNetworkManager.Instance.gameObject);
+		SceneChanger.QuickChangeScene("MainMenu");
 	}
 }

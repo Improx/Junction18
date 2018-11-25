@@ -347,7 +347,7 @@ Prefab:
     - target: {fileID: 224738207616261302, guid: ea06cd1d264c6db429e1033824638804,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000036851096
+      value: 0.000029057099
       objectReference: {fileID: 0}
     - target: {fileID: 224013048013007130, guid: ea06cd1d264c6db429e1033824638804,
         type: 2}
@@ -387,12 +387,17 @@ Prefab:
     - target: {fileID: 114948492237171414, guid: ea06cd1d264c6db429e1033824638804,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseLobby
+      value: Disconnect
       objectReference: {fileID: 0}
     - target: {fileID: 114948492237171414, guid: ea06cd1d264c6db429e1033824638804,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 224758839752130366, guid: ea06cd1d264c6db429e1033824638804,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea06cd1d264c6db429e1033824638804, type: 2}
