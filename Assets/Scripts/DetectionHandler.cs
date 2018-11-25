@@ -12,7 +12,7 @@ public class DetectionHandler : MonoBehaviour {
 	void OnEnable () => FieldOfView.Detected += PlayEffects;
 	void OnDisable () => FieldOfView.Detected -= PlayEffects;
 	void PlayEffects (Robber r, string status) {
-		if (status == "Add" && !Robs.Contains (r)) {
+		if (status == "Add" && !Robs.Contains (r) && !r.Detained) {
 			Exclamation = r.transform.Find ("Exclamation").gameObject;
 			ExPoint = Exclamation.GetComponent<SpriteRenderer> ();
 			Source = GameObject.Find("Detecthandler");
