@@ -18,6 +18,7 @@ public class ExtractionPoint : MonoBehaviour {
         if (player.isLocalPlayer) {
             if (player.GetComponent<CollectItems>().currentItem) {
                 player.ScoreItem(player.GetComponent<CollectItems>().currentItem);
+                player.GetComponent<CollectItems>().currentItem = null;
             }
         }
         // pickup with left click if object has item tag 
