@@ -54,6 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RobberPoints: 0
   CountText: {fileID: 0}
+  ItemPrefabs:
+  - {fileID: 1335825810898058, guid: fc1c5f98afa671942ad9ea7d3c8aecb5, type: 2}
 --- !u!114 &114835142529479718
 MonoBehaviour:
   m_ObjectHideFlags: 1

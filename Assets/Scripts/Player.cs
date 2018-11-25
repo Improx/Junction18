@@ -55,10 +55,9 @@ public class Player : NetworkBehaviour
         }
     }
 
-    public void GrabItem(GameObject item)
+    public void GrabItem(Item item)
     {
-        item.GetComponent<NetworkIdentity>().AssignClientAuthority(item.GetComponent<NetworkIdentity>().connectionToServer);
-        GameManager.Instance.CmdGrab(gameObject, item);
+        GameManager.Instance.CmdGrab(gameObject, item.ItemType);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

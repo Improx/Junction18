@@ -13,6 +13,8 @@ public class GameManager : NetworkBehaviour
 	public int RobberPoints = 0;
 	public Text CountText;
 
+	public List<GameObject> ItemPrefabs;
+
 	private void Update()
 	{
 		if (!isServer) return;
@@ -49,14 +51,18 @@ public class GameManager : NetworkBehaviour
 	}
 	
 	[Command]
-	public void CmdGrab(GameObject player, GameObject item) {
+	public void CmdGrab(GameObject player, int itemId) {
 		if (player.GetComponent<Player>().Team == PlayerType.Guard) return;
 
-		RpcGrab(player, item);
+		RpcGrab(player, itemId);
 	}
 
 	[ClientRpc]
-	public void RpcGrab(GameObject player, GameObject item) {
-		item.transform.parent = player.GetComponent<CollectItems>().carryLocation.transform;
+	public void RpcGrab(GameObject player, int itemId) {
+
+		var objects = new List<Item>(FindObjectsOfType<Item>()).FindAll(x => x.ItemType == itemId);
+		objects.ForEach(x => Destroy(x.gameObject));
+
+		Instantiate(ItemPrefabs[itemId], player.GetComponent<CollectItems>().carryLocation, false);
 	}
 }
