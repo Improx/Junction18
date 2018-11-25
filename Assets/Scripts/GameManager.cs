@@ -18,7 +18,8 @@ public class GameManager : NetworkBehaviour
 	private void Update()
 	{
 		if (!isServer) return;
-		if (NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers)
+		if ((NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers) ||
+			(NumOfItems <= NumOfStolenItems))
 		{
 			foreach (var player in Players)
 			{
@@ -37,7 +38,7 @@ public class GameManager : NetworkBehaviour
 	public int NumOfRobbers => Robber.All.Count;
 	public int NumOfDetainedRobbers => Robber.All.FindAll(x => x.Detained).Count;
 
-	public int NumOfItems => 0;
+	public int NumOfItems => 3;
 	public int NumOfStolenItems => RobberPoints;
 
 	[Command]
