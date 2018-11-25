@@ -57,6 +57,7 @@ public class Player : NetworkBehaviour
 
     public void GrabItem(GameObject item)
     {
+        item.GetComponent<NetworkIdentity>().AssignClientAuthority(item.GetComponent<NetworkIdentity>().connectionToServer);
         GameManager.Instance.CmdGrab(gameObject, item);
     }
 
