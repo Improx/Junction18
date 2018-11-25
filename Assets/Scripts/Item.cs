@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Item : NetworkBehaviour {
+public class Item : MonoBehaviour {
+
+	public int ItemType;
 
 	// Use this for initialization
 	void Start () {

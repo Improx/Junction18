@@ -21,8 +21,7 @@ GameObject:
   - component: {fileID: 4739099070256466}
   - component: {fileID: 212730517283704182}
   - component: {fileID: 61744635728600012}
-  - component: {fileID: 114213436434804280}
-  - component: {fileID: 114682579409840268}
+  - component: {fileID: 114314500475641920}
   m_Layer: 2
   m_Name: treasureTrophy
   m_TagString: Item
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1335825810898058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.611327, y: 9.914373, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,39 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8663684, y: 1.7707562}
   m_EdgeRadius: 0
---- !u!114 &114213436434804280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1335825810898058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 252
-    i1: 28
-    i2: 95
-    i3: 152
-    i4: 175
-    i5: 166
-    i6: 113
-    i7: 148
-    i8: 42
-    i9: 217
-    i10: 234
-    i11: 125
-    i12: 60
-    i13: 138
-    i14: 236
-    i15: 181
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
---- !u!114 &114682579409840268
+--- !u!114 &114314500475641920
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0d4b922918e354bb72c1e29e1e9b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemType: 0
 --- !u!212 &212730517283704182
 SpriteRenderer:
   m_ObjectHideFlags: 1
