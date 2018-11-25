@@ -13,7 +13,6 @@ public class CollectItems : MonoBehaviour
             if (currentItem!=null)
             {
                 currentItem.parent = null;
-
                 currentItem.position = transform.GetComponent<Transform>().position;
                 currentItem = null;
             }
