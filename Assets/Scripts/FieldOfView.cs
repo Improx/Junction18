@@ -14,20 +14,25 @@ public class FieldOfView : MonoBehaviour {
 	[HideInInspector] public List<Robber> VisibleRobbers = new List<Robber>();
 
 	private Mesh _viewMesh;
+	private bool _init = false;
 
 	public delegate void DetectionEvent(Robber r, string status);
 	public static event DetectionEvent Detected;
 
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
 		_viewMesh = new Mesh();
 		_viewMesh.name = "View Mesh";
+		yield return new WaitForSeconds(0.5f);
 		ViewMeshFilter.mesh = _viewMesh;
 		ViewMeshFilterForRobbers.mesh = _viewMesh;
+		_init = true;
+
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () {
+		if (!_init) return;
 		DrawFieldOfView();
 		DetectRobbers();
 	}
