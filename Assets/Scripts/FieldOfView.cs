@@ -91,7 +91,8 @@ public class FieldOfView : MonoBehaviour {
 
 		foreach (var robber in VisibleRobbers)
 		{
-			robber.GetComponentInChildren<SpriteRenderer>().enabled = false;
+			//If player and guard:
+			if (GetComponent<Player>().isLocalPlayer) robber.GetComponentInChildren<SpriteRenderer>().enabled = false;
 			robber.FlashlightRadiance = 0;
 		}
 		VisibleRobbers.Clear();
