@@ -23,6 +23,8 @@ public class Player : NetworkBehaviour
         //If we're not local player:
         if (!isLocalPlayer)
         {
+		    LobbyUIManager.CloseCanvas();
+            
             if (Team == PlayerType.Guard)
             {
                 Transform robberLight = GetComponentInChildren<FlashlightAreaRobbers>().transform;

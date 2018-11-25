@@ -87,7 +87,6 @@ public class MyNetworkManager : NetworkLobbyManager {
 			prf = RobberPrefab;
 		}
 
-		LobbyUIManager.CloseCanvas();
         return (GameObject)Instantiate(prf);
 	}
 
