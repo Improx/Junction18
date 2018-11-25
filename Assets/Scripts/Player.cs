@@ -55,15 +55,33 @@ public class Player : NetworkBehaviour
         }
     }
 
+    public void ScoreItem(Item currentItem)
+    {
+        if (!isLocalPlayer) return;
+
+        CmdScoreItem(currentItem.gameObject);
+    }
+	
+	[Command]
+	public void CmdScoreItem(GameObject item) {
+        GameManager.Instance.RobberPoints += 1;
+		RpcScoreItem(item);
+	}
+
+	[ClientRpc]
+	public void RpcScoreItem(GameObject item) {
+        Destroy(item.gameObject);
+	}
+
     public void GrabItem(Item item)
     {
         if (!isLocalPlayer) return;
 
-        CmdGrab(gameObject, item.gameObject);
+        CmdGrab(item.gameObject);
     }
 	
 	[Command]
-	public void CmdGrab(GameObject player, GameObject item) {
+	public void CmdGrab(GameObject item) {
 
 		RpcGrab(item);
 	}

@@ -6,8 +6,20 @@ public class ExtractionPoint : MonoBehaviour {
 
 	public SpriteRenderer TreasureSprite;
 
-	void OnTriggerStay2D(Collider2D other)
+	void OnTriggerEnter2D(Collider2D other)
     {
+        
+        var player = other.attachedRigidbody.GetComponent<Player>();
+
+        if (!player) return;
+
+        if (player.Team == PlayerType.Guard) return;
+
+        if (player.isLocalPlayer) {
+            if (player.GetComponent<CollectItems>().currentItem) {
+                player.ScoreItem(player.GetComponent<CollectItems>().currentItem);
+            }
+        }
         // pickup with left click if object has item tag 
         if (other.CompareTag("Item")  && Input.GetButtonDown("Fire2"))
         {
