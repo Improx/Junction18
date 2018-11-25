@@ -47,4 +47,16 @@ public class GameManager : NetworkBehaviour
 		robber.GetComponent<Player>().RpcGetCaptured();
 		robber.GetComponent<Robber>().Detained = true;
 	}
+	
+	[Command]
+	public void CmdGrab(GameObject player, GameObject item) {
+		if (player.GetComponent<Player>().Team == PlayerType.Guard) return;
+
+		RpcGrab(player, item);
+	}
+
+	[ClientRpc]
+	public void RpcGrab(GameObject player, GameObject item) {
+		item.transform.parent = player.GetComponent<CollectItems>().carryLocation.transform;
+	}
 }
