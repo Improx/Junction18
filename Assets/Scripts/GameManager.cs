@@ -1,28 +1,32 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using TMPro;
 
-public class GameManager : NetworkBehaviour {
-	
+public class GameManager : NetworkBehaviour
+{
+
 	public static GameManager Instance { get; private set; }
 
 	[SyncVar]
 	public int RobberPoints = 0;
 	public Text CountText;
-	
-	private void Update() {
+
+	private void Update()
+	{
 		if (!isServer) return;
-		if (NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers) {
-		    foreach (var player in Players)
+		if (NumOfRobbers != 0 && NumOfRobbers <= NumOfDetainedRobbers)
+		{
+			foreach (var player in Players)
 			{
 				player.RpcDisplayEndSCreen();
 			}
 		}
 	}
 
-	private void Awake() {
+	private void Awake()
+	{
 		Instance = this;
 	}
 
@@ -35,9 +39,10 @@ public class GameManager : NetworkBehaviour {
 	public int NumOfStolenItems => RobberPoints;
 
 	[Command]
-	public void CmdCapture(GameObject guard, GameObject robber) {
-		if (guard.GetComponent<Player>().Team != PlayerType.Guard
-			&& robber.GetComponent<Player>().Team != PlayerType.Robber) return;
+	public void CmdCapture(GameObject guard, GameObject robber)
+	{
+		if (guard.GetComponent<Player>().Team != PlayerType.Guard &&
+			robber.GetComponent<Player>().Team != PlayerType.Robber) return;
 
 		robber.GetComponent<Player>().RpcGetCaptured();
 		robber.GetComponent<Robber>().Detained = true;
