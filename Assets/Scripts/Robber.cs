@@ -52,4 +52,9 @@ public class Robber : MonoBehaviour
 	{
 		_spriteRenderer.sprite = _detainedSprite;
 	}
+
+	public void ShowNormalSprite()
+	{
+		_spriteRenderer.sprite = _defaultSprite;
+	}
 }
