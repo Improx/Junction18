@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce14ba4a912d1419e298b65300337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   depth: -0.5
   PlayerModel: {fileID: 1452915685855728}
   MouseAim: 1

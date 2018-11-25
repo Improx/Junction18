@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce14ba4a912d1419e298b65300337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 3
   depth: -0.5
   PlayerModel: {fileID: 1607576976259100}
   MouseAim: 1
