@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4739099070256466}
   - component: {fileID: 212730517283704182}
   - component: {fileID: 61744635728600012}
-  - component: {fileID: 114623404768157228}
-  - component: {fileID: 114314500475641920}
+  - component: {fileID: 114213436434804280}
+  - component: {fileID: 114682579409840268}
   m_Layer: 2
-  m_Name: treasureTrophy
+  m_Name: treasureScroll
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1335825810898058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.611327, y: 9.914373, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9375, y: 1.75}
+    oldSize: {x: 1.15625, y: 1}
     newSize: {x: 1.9375, y: 1.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -68,19 +68,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8663684, y: 1.7707562}
   m_EdgeRadius: 0
---- !u!114 &114314500475641920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1335825810898058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0d4b922918e354bb72c1e29e1e9b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemType: 0
---- !u!114 &114623404768157228
+--- !u!114 &114213436434804280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,24 +82,36 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 252
-    i1: 28
-    i2: 95
-    i3: 152
-    i4: 175
-    i5: 166
-    i6: 113
-    i7: 148
-    i8: 42
-    i9: 217
-    i10: 234
-    i11: 125
-    i12: 60
-    i13: 138
-    i14: 236
-    i15: 181
+    i0: 188
+    i1: 138
+    i2: 7
+    i3: 14
+    i4: 21
+    i5: 127
+    i6: 180
+    i7: 65
+    i8: 201
+    i9: 6
+    i10: 81
+    i11: 206
+    i12: 101
+    i13: 79
+    i14: 252
+    i15: 172
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114682579409840268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335825810898058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0d4b922918e354bb72c1e29e1e9b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemType: 0
 --- !u!212 &212730517283704182
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d47fafd23630449f5a40534d4e6e63af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae573470be21f426e887ac611b5f1d36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
