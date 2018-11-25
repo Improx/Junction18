@@ -347,7 +347,7 @@ Prefab:
     - target: {fileID: 224738207616261302, guid: ea06cd1d264c6db429e1033824638804,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000029057099
+      value: 0.000007987581
       objectReference: {fileID: 0}
     - target: {fileID: 224013048013007130, guid: ea06cd1d264c6db429e1033824638804,
         type: 2}
@@ -398,6 +398,16 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189143017032346, guid: ea06cd1d264c6db429e1033824638804,
+        type: 2}
+      propertyPath: m_OfflineScene
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189143017032346, guid: ea06cd1d264c6db429e1033824638804,
+        type: 2}
+      propertyPath: m_LobbyScene
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea06cd1d264c6db429e1033824638804, type: 2}
