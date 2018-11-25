@@ -15,22 +15,22 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
-		//On both cases, if we're local player or not:
-		if (Team == PlayerType.Robber)
-		{
-			_robber = gameObject.AddComponent<Robber>();
-		}
-		//If we're not local player:
-		if (!isLocalPlayer)
-		{
-			if (Team == PlayerType.Guard)
-			{
-				Transform robberLight = GetComponentInChildren<FlashlightAreaRobbers>().transform;
-				robberLight.position = new Vector3(robberLight.position.x, robberLight.position.y, 0);
-			}
-			return;
-		}
-		//We are local player:
+        if (Team == PlayerType.Robber)
+        {
+            _robber = gameObject.GetComponent<Robber>();
+        }
+
+        //If we're not local player:
+        if (!isLocalPlayer)
+        {
+            if (Team == PlayerType.Guard)
+            {
+                Transform robberLight = GetComponentInChildren<FlashlightAreaRobbers>().transform;
+                robberLight.position = new Vector3(robberLight.position.x, robberLight.position.y, 0);
+            }
+            return;
+        }
+        //We are local player:
         if (Team == PlayerType.Robber)
         {
             var mainCamera = FindObjectOfType<Camera>();
@@ -45,8 +45,8 @@ public class Player : NetworkBehaviour
             mainCamera.GetComponent<CinemachineBrain>().enabled = true;
             mainCamera.GetComponent<PixelPerfectCamera>().enabled = true;
 
-			BigStencilMask.Instance.transform.position = new Vector3(BigStencilMask.Instance.transform.position.x, BigStencilMask.Instance.transform.position.y, -10);
-		}
+            BigStencilMask.Instance.transform.position = new Vector3(BigStencilMask.Instance.transform.position.x, BigStencilMask.Instance.transform.position.y, -10);
+        }
 
         else
         {
@@ -61,17 +61,19 @@ public class Player : NetworkBehaviour
 
         CmdScoreItem(currentItem.gameObject);
     }
-	
-	[Command]
-	public void CmdScoreItem(GameObject item) {
-        GameManager.Instance.RobberPoints += 1;
-		RpcScoreItem(item);
-	}
 
-	[ClientRpc]
-	public void RpcScoreItem(GameObject item) {
+    [Command]
+    public void CmdScoreItem(GameObject item)
+    {
+        GameManager.Instance.RobberPoints += 1;
+        RpcScoreItem(item);
+    }
+
+    [ClientRpc]
+    public void RpcScoreItem(GameObject item)
+    {
         Destroy(item.gameObject);
-	}
+    }
 
     public void GrabItem(Item item)
     {
@@ -79,18 +81,19 @@ public class Player : NetworkBehaviour
 
         CmdGrab(item.gameObject);
     }
-	
-	[Command]
-	public void CmdGrab(GameObject item) {
 
-		RpcGrab(item);
-	}
+    [Command]
+    public void CmdGrab(GameObject item)
+    {
 
-	[ClientRpc]
-	public void RpcGrab(GameObject item) {
-        item.transform.parent= GetComponent<CollectItems>().carryLocation;
-	}
-	
+        RpcGrab(item);
+    }
+
+    [ClientRpc]
+    public void RpcGrab(GameObject item)
+    {
+        item.transform.parent = GetComponent<CollectItems>().carryLocation;
+    }
 
     public void UnGrab(Item item)
     {
@@ -98,17 +101,20 @@ public class Player : NetworkBehaviour
 
         CmdUnGrab(item.gameObject);
     }
-	[Command]
-	public void CmdUnGrab(GameObject item) {
 
-		RpcUnGrab(item);
-	}
+    [Command]
+    public void CmdUnGrab(GameObject item)
+    {
 
-	[ClientRpc]
-	public void RpcUnGrab(GameObject item) {
+        RpcUnGrab(item);
+    }
+
+    [ClientRpc]
+    public void RpcUnGrab(GameObject item)
+    {
         item.transform.parent = null;
         item.transform.position = GetComponent<Transform>().position;
-	}
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -128,10 +134,12 @@ public class Player : NetworkBehaviour
     [ClientRpc]
     public void RpcGetCaptured()
     {
-        if (isLocalPlayer) {
+        if (isLocalPlayer)
+        {
             GetComponent<Robber>().Detain();
         }
         GetComponent<Robber>().Detained = true;
+        GetComponent<Robber>().ShowDetainedSprite();
     }
 
     [ClientRpc]

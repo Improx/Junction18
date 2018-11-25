@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114934193636280576}
   - component: {fileID: 50160770408742660}
   - component: {fileID: 58625500576248844}
+  - component: {fileID: 114979549916140370}
   m_Layer: 2
   m_Name: PlayerRobber
   m_TagString: Untagged
@@ -297,6 +298,20 @@ MonoBehaviour:
     i15: 176
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114979549916140370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236575233429154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc36ea9f146c9c42a390056a11b9ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashlightRadiance: 0
+  Detained: 0
+  _detainedSprite: {fileID: 21300000, guid: c340fd1aaefc04afe81326404fa4fb28, type: 3}
 --- !u!198 &198215014009448688
 ParticleSystem:
   m_ObjectHideFlags: 1
